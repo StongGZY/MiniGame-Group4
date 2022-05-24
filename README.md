@@ -18,7 +18,6 @@
       - Framework | 脚本代码框架
     - Settings | URP 设置及资源文件
     - Shaders | 着色器资源
-    - TutorialInfo | URP 项目自带
   - Documents | 文档
     - 策划案
       - AI
