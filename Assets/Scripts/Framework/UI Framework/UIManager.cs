@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // ! 管理所有 UI
 public class UIManager : Singleton<UIManager>
 {
-    private static Dictionary<Type, LogicBase> typeScreens = new Dictionary<Type, LogicBase>(); // UI 字典
+    private static Dictionary<Type, LogicBase> uiPages = new Dictionary<Type, LogicBase>(); // UI 字典
 
     public GameObject UIRoot { get; private set; } // UI Root, 用于挂载 UI, UI 相机, Canvas
 
@@ -38,7 +38,7 @@ public class UIManager : Singleton<UIManager>
 
         LogicBase logicBase = null;
 
-        if (typeScreens.TryGetValue(type, out logicBase)) // 检查 UI 字典中是否有该 UI, 如有则返回该 UI
+        if (uiPages.TryGetValue(type, out logicBase)) // 检查 UI 字典中是否有该 UI, 如有则返回该 UI
             return logicBase;
 
         return null;
@@ -89,7 +89,7 @@ public class UIManager : Singleton<UIManager>
     /// </summary>
     private void AddUI(LogicBase logicBase)
     {
-        typeScreens.Add(logicBase.GetType(), logicBase); // 添加到字典中
+        uiPages.Add(logicBase.GetType(), logicBase); // 添加到字典中
         logicBase.currentUIRoot.transform.SetParent(GetUIRootTransform());
 
         logicBase.currentUIRoot.transform.localPosition = Vector3.zero;
@@ -103,8 +103,8 @@ public class UIManager : Singleton<UIManager>
     /// </summary>
     private void RemoveUI(Type logicBase)
     {
-        if (typeScreens.ContainsKey(logicBase.GetType()))  // 根据具体需求决定到底是直接销毁还是缓存
-            typeScreens.Remove(logicBase.GetType());
+        if (uiPages.ContainsKey(logicBase.GetType()))  // 根据具体需求决定到底是直接销毁还是缓存
+            uiPages.Remove(logicBase.GetType());
     }
 }
 
@@ -113,14 +113,14 @@ public class UIManager : Singleton<UIManager>
 // /// </summary>
 // public void CloseAllUI()
 // {
-//     List<Type> keys = new List<Type>(typeScreens.Keys);
+//     List<Type> keys = new List<Type>(uiPages.Keys);
 //     foreach (var k in keys)
 //     {
 //         if (k == typeof(LogicBase))
 //         {
 //             continue;
 //         }
-//         if (typeScreens.ContainsKey(k))
-//             typeScreens[k].OnClose();
+//         if (uiPages.ContainsKey(k))
+//             uiPages[k].OnClose();
 //     }
 // }

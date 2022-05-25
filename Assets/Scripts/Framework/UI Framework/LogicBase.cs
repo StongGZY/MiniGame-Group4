@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// ! 处理 UI 逻辑, 所有 UIScreen类 必须继承自 LogicBase, 如果 UI 有子 UI, 子 UI 根节点需要继承自 SubScreenBase
+// ! 处理 UI 逻辑, 所有 UILogic类 必须继承自 LogicBase, 如果 UI 有子 UI, 子 UI 根节点需要继承自 SubLogicBase
 public class LogicBase
 {
     public GameObject currentUIRoot = null; // 当前 UI 的根节点

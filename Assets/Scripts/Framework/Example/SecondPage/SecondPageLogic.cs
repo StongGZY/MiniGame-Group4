@@ -6,9 +6,9 @@ public class SecondPageLogic : LogicBase
 {
     private SecondPageCtrl ctrl;
 
-    private FirstSubPageLogic firstSubPageScreen;
+    private FirstSubPageLogic firstSubPageLogic;
 
-    private SecondSubPageLogic secondSubPageScreen;
+    private SecondSubPageLogic secondSubPageLogic;
 
     public SecondPageLogic() : base(UIName.SecondPage)
     {
@@ -21,8 +21,8 @@ public class SecondPageLogic : LogicBase
 
         GlobalEventManager.OnExampleButtonClickEvent += OnExampleButtonClick;
 
-        firstSubPageScreen = new FirstSubPageLogic(ctrl.FirstSubPageCtrl);
-        secondSubPageScreen = new SecondSubPageLogic(ctrl.SecondSubPageCtrl);
+        firstSubPageLogic = new FirstSubPageLogic(ctrl.FirstSubPageCtrl);
+        secondSubPageLogic = new SecondSubPageLogic(ctrl.SecondSubPageCtrl);
 
         ctrl.FirstSubPageCtrl.gameObject.SetActive(!ExampleData.IsSecondSubPage);
         ctrl.SecondSubPageCtrl.gameObject.SetActive(ExampleData.IsSecondSubPage);
@@ -31,8 +31,8 @@ public class SecondPageLogic : LogicBase
     protected override void Dispose()
     {
         base.Dispose();
-        firstSubPageScreen.Dispose();
-        secondSubPageScreen.Dispose();
+        firstSubPageLogic.Dispose();
+        secondSubPageLogic.Dispose();
 
         GlobalEventManager.OnExampleButtonClickEvent -= OnExampleButtonClick;
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExampleData : MonoBehaviour
+public class ExampleData
 {
     private static bool isSecondSubPage = false;
 
