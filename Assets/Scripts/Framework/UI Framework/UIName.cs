@@ -2,6 +2,5 @@
 public static class UIName
 {
     public static readonly string FirstPage = "Example/FirstPage";
-
     public static readonly string SecondPage = "Example/SecondPage";
 }

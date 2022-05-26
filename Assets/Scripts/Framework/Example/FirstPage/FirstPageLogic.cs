@@ -20,9 +20,8 @@ public class FirstPageLogic : LogicBase
 
     protected override void Dispose()
     {
-        base.Dispose();
-
         ctrl.ClickButton.onClick.RemoveAllListeners();
+        base.Dispose();
     }
 
     private void OnButtonClick()
