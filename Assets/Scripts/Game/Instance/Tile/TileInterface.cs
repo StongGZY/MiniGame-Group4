@@ -11,6 +11,10 @@ interface TileInterface
 
 	Landform GetLandform();
 
-	int getTileType();
+	int GetTileType();
+
+	int GetUnitsNum();
+
+	int GetUnits();
 
 }
