@@ -1,5 +1,4 @@
 ﻿using System;
-using Landform
 
 
 interface TileInterface
@@ -9,6 +8,8 @@ interface TileInterface
 	int GetYieldReserve(int yieldIndex);
 
 	void ReduceYieldReserve(int yieldIndex, int amount);
+
+	Landform GetLandform();
 
 	int getTileType();
 
