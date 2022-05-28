@@ -20,6 +20,12 @@ public class SecondSubPageLogic : SubLogicBase
         subCtrl = SubCtrl as SecondSubPageCtrl;
     }
 
+    public override void Dispose()
+    {
+        subCtrl.ClickButton.onClick.RemoveAllListeners();
+        base.Dispose();
+    }
+
     private void OnClick()
     {
         ExampleData.IsSecondSubPage = false;

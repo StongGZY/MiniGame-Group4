@@ -30,11 +30,10 @@ public class SecondPageLogic : LogicBase
 
     protected override void Dispose()
     {
-        base.Dispose();
+        GlobalEventManager.OnExampleButtonClickEvent -= OnExampleButtonClick;
         firstSubPageLogic.Dispose();
         secondSubPageLogic.Dispose();
-
-        GlobalEventManager.OnExampleButtonClickEvent -= OnExampleButtonClick;
+        base.Dispose();
     }
 
     private void OnExampleButtonClick(bool flag)
