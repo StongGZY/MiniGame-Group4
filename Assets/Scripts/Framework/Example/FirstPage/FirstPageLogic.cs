@@ -8,6 +8,7 @@ public class FirstPageLogic : LogicBase
 
     public FirstPageLogic() : base(UIName.FirstPage)
     {
+        
     }
 
     protected override void OnLoad()
