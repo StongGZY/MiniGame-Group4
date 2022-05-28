@@ -76,8 +76,8 @@ public class UIManager : Singleton<UIManager>
 
         if (logicBase != null) // 如 UI 存在, 则调用 UI 的 OnClose(), UI 关闭的逻辑由其自己实现
         {
-            logicBase.OnClose();
             RemoveUI(type); // 默认关闭时删除该 UI
+            logicBase.OnClose();
             return true;
         }
 
@@ -103,8 +103,8 @@ public class UIManager : Singleton<UIManager>
     /// </summary>
     private void RemoveUI(Type logicBase)
     {
-        if (uiPages.ContainsKey(logicBase.GetType()))  // 根据具体需求决定到底是直接销毁还是缓存
-            uiPages.Remove(logicBase.GetType());
+        if (uiPages.ContainsKey(logicBase))  // 根据具体需求决定到底是直接销毁还是缓存
+            uiPages.Remove(logicBase);
     }
 }
 
