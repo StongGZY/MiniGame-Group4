@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Resource
+public class Yield
 {
-	public Resource()
+	public Yield()
 	{
 	}
 }

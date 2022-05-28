@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Level1
+public class Stage
 {
-	public Level()
+	public Stage()
 	{
 	}
 }
